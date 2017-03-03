@@ -1,14 +1,14 @@
 % ______________________________________________________________________________
 %
 %   1DV600 - Software Technology
-%   Assignment 3 -- "Analysis, Design and Implementation"
+%   Assignment 3 -- "Testing"
 %
 %  Author:  Jonas Sjöberg
 %           Linnaeus University
 %           js224eh@student.lnu.se
 %           https://github.com/jonasjberg
 %
-%    Date:  2017-03-16 -- 2017-02-19
+%    Date:  2017-03-03 -- 2017-03-05
 %
 % License:  Creative Commons Attribution 4.0 International (CC BY 4.0)
 %           <http://creativecommons.org/licenses/by/4.0/legalcode>
@@ -46,15 +46,6 @@
 \usepackage{graphicx}
 %\usepackage{microtype}
 
-% \usepackage{lastpage}
-% \usepackage{fancyhdr}
-% \fancypagestyle{plain}{
-%   \fancyhf{} % Clear header/footer
-%   \fancyfoot[L]{Jonas Sjöberg \\ \texttt{js224eh@student.lnu.se}}
-%   \fancyfoot[C]{\textsc{1DV600} -- Software Technology}
-%   \fancyfoot[R]{\thepage/\pageref{LastPage}}% Right footer
-% }
-% \pagestyle{plain}
 
 \usepackage[pdfusetitle,
             bookmarks=true,
@@ -194,8 +185,8 @@ texcl=false,
 
 \title{\textsc{1DV600}                   \\
        Software Technology               \\
-       Assignment 2                      \\
-       Analysis, Design and Implementation}
+       Assignment 3                      \\
+       Testing}
 
 \author{                                 \\
   Jonas Sjöberg                          \\
@@ -214,9 +205,9 @@ texcl=false,
 
   \begin{center}
     \begin{tabular}{l r}
-      Written during:      & \isodate \printdate{2017-02-16} -- \printdate{2017-02-19} \\
-      Teacher responsible: & Jesper Andersson
-      % Teacher responsible: & Tobias Ohlsson
+      Written during:      & \isodate \printdate{2017-03-03} -- \printdate{2017-03-05} \\
+      Teacher responsible: & Jesper Andersson           \\
+                           & Tobias Andersson-Gidlund
     \end{tabular}
   \end{center}
 
@@ -224,6 +215,10 @@ texcl=false,
     % TODO: Rewrite abstract!
     Assignment in the course \emph{1DV600 -- Software Technology}, distance
     given by Linnaeus University during the spring of 2017.
+    The focus of this assignment is to perform tests on the system in order to
+    make sure the system is as reliable as possible and also doing the right
+    thing. To do this properly it is important to find out what to test and
+    also who’s responsibility it is to actually correct a problem that occurs.
   \end{abstract}
 
   \clearpage
@@ -244,13 +239,17 @@ texcl=false,
 
   \input{task-1.tex}
 
-  \clearpage
-  \input{task-2.tex}
+  % \clearpage
+  % \input{task-2.tex}
+
+  % \clearpage
+  % \input{task-3.tex}
+
+  % \clearpage
+  % \input{task-4.tex}
 
   \clearpage
-  \input{task-3.tex}
-
-  \clearpage
+  % TODO: Include time log as a separate file/document!
   \input{time-log.tex}
 
   \addcontentsline{toc}{section}{References}

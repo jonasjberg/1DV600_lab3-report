@@ -2,14 +2,14 @@
 # ______________________________________________________________________________
 #
 #   1DV600 - Software Technology
-#   Assignment 2 -- "Analysis, Design and Implementation"
+#   Assignment 3 -- "Testing"
 #
 #  Author:  Jonas Sjöberg
 #           Linnaeus University
 #           js224eh@student.lnu.se
 #           https://github.com/jonasjberg
 #
-#    Date:  2017-02-16 -- 2017-02-19
+#    Date:  2017-03-03 -- 2017-03-05
 #
 # License:  This program is free software: you can redistribute it and/or
 #           modify it under the terms of the GNU General Public License as
@@ -107,10 +107,10 @@ markdowntoprettypdf()
   echo "now working from directory: \"$(pwd -P)\""
   
   # First use pandoc to make pdf from the markdown files.
-  for arg in use-case-*.md
-  do
-      markdowntoprettypdf "$arg"
-  done
+  # for arg in use-case-*.md
+  # do
+  #     markdowntoprettypdf "$arg"
+  # done
 
   # Then copy figures from another repo ..
   ./copy-figures.sh

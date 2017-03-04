@@ -88,8 +88,10 @@ desktop workstation.
 
 This project will use the same methodology, continuous execution of fast tests.
 
+% TODO: Finish Dynamic Test Processes!
 
 \subsection{High-level Test System Planning}
+\subsubsection{Dynamic Test Processes}
 The codebase will be tested at a low-level. This requires that the code is
 written such that components can be used and tested in isolation.
 It is most helpful to divide the system into smaller parts that can be tested
@@ -105,17 +107,38 @@ routine can likely be written in a functional style; the test code need not
 handle any kind of setup or initialization routine to ensure that the test
 is done in a well-defined state. 
 
+Some systems are inherently better suited for a object-oriented programming
+style.  This requires some extra work, the objects/classes/modules to be tested
+should be designed to allow for testing in isolation. Some components depend on
+some other system interface, this is often handled by substituting ``mock''
+objects in place of the dependencies. 
+
+An example could be testing a component that requires a database connection.
+This could be done by presenting the object with an interface that matches that
+of an actual database, but use a much simpler mock database during tests. This
+has numerous advantages and eliminates variables that would otherwise introduce
+noise in the tests. This could be the `HTTP` connection in the database
+example.
+
+We just want to test the functionality of our code.
+
 % This project could be divided into a user-facing layer; the Java program
 % that we are developing.  connects to 
 
+\subsubsection{Test Management Integration}
+The project testing will primarily use the JUnit integration features provided by the IDE.
+Additional software is needed for more sophisticated integration -- bug
+tracking, team collaboration tools, time management, etc.
+
+A popular choice is \texttt{Jira}\cite{tools:jira} by Atlassian. However, I would much
+prefer an open source tool like GitHub Issues\cite{tools:github-issues} or
+Launchpad \cite{tools:launchpad}.
+
+\subsubsection{Dynamic Test Processes}
 % TODO: Dynamic Test Processes
 
-% TODO: Test Management Integration
-% TODO: Dynamic Test Processes
-%
+\subsubsection{Dynamic Test Processes}
 % TODO: Suitable techniques for testing in the identified processes.
-
-
 
 \subsection{Reflections}\label{task-1c-reflect}
 % TODO: Reflection on creating a test plan in 100 words.

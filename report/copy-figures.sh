@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-THIS_PATH="$(dirname -- "$(readlink -fn -- "$0")")"                   
+THIS_PATH="$(dirname -- "$(readlink -- "$0")")"
 
 (cd "$THIS_PATH") 2>/dev/null 
 if [ "$?" -ne "0" ]

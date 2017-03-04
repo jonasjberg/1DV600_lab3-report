@@ -25,17 +25,17 @@ from the course Wiki\cite{1dv600:lab3:instructions}:
 \begin{quote}
   To get an overall structure to test, the first task is to create a test plan.
   Use the discussion in the lectures for a structure and additionally get some
-  inspiration from http://epf.eclipse.org/wikis/openup/ ­­ you will not find a
-  template as such there, but lots of information on what you need to include.
-  You can also use other sources for inspiration and search for templates, as
-  long as they seem to be valid. Make use of your requirements from the
-  previous assignment and possibly additional material from Assignment 2. Don’t
-  forget that the quality requirements will require a special treatment.
-  Identify objectives, objects and create a work breakdown structure using test
-  management processes, dynamic test processes, and possibly static processes
-  for objects and objectives. Specify suitable techniques for testing in the
-  processes you have identified. Write down your reflections on creating a test
-  plan with about 100 words.
+  inspiration from \url{http://epf.eclipse.org/wikis/openup/} ­­ you will not
+  find a template as such there, but lots of information on what you need to
+  include.  You can also use other sources for inspiration and search for
+  templates, as long as they seem to be valid. Make use of your requirements
+  from the previous assignment and possibly additional material from Assignment
+  2. Don't forget that the quality requirements will require a special
+  treatment.  Identify objectives, objects and create a work breakdown
+  structure using test management processes, dynamic test processes, and
+  possibly static processes for objects and objectives. Specify suitable
+  techniques for testing in the processes you have identified. Write down your
+  reflections on creating a test plan with about 100 words.
 \end{quote}
 
 
@@ -58,20 +58,22 @@ from the course Wiki\cite{1dv600:lab3:instructions}:
 %         * ("possibly" Static Test Processes "for objects and objectives")
 %         * Dynamic Test Processes
 %
-% * Specify sutable techniques for testing in the identified processes.
+% * Specify suitable techniques for testing in the identified processes.
 
 \subsubsection{Setting up the Test Tools}
-There is no doubt that the de-facto standard for testing Java codebases is
+There is no doubt that the de-facto standard for testing Java codebass is
 JUnit\cite{tools:junit}, a testing library and framework that I have used
 extensively in the past.
 Most popular Java IDEs have some kind of support for integrating various
 third-party testing frameworks/tools. 
 This is often integrated test-runners and viewers for test results and other
-test output, which makes continous testing a lot easier to setup.
+test output, which makes continuous testing a lot easier to setup.
 
-It is important to be able to run the tests or suite of tests quickly --
-if test execution is slow and development must halt for some time; which could
-be a couple of seconds (smaller projects) or an entire night (Microsoft Windows).
+The project testing will be using JUnit for all test code. 
+
+It is important to be able to run the tests or suite of tests quickly -- if
+test execution is slow and development must halt for some time; which could be
+a couple of seconds (smaller projects) or during an entire night (MS Windows).
 % TODO: Add citation for above
 
 Fast test suite execution encourages developers to run the test suite often,
@@ -79,30 +81,43 @@ ideally directly after every single functional modification of the code.
 
 If the test suite is too slow, developers might put off running the tests.
 
-
-
-
-The project testing will be using JUnit for all test code. 
-
-
-\subsection{High-level Test System Planning}
 I usually configure my IDE, \texttt{Intellij IDEA Ultimate 2016.3.4}, to
 automatically run the tests or test suite when the source files are modified on
 disk. The test execution is almost instant for most trivial projects on my main
 desktop workstation.
 
-This project will use the same methodology, continous execution of fast tests.
+This project will use the same methodology, continuous execution of fast tests.
 
+
+\subsection{High-level Test System Planning}
+The codebase will be tested at a low-level. This requires that the code is
+written such that components can be used and tested in isolation.
+It is most helpful to divide the system into smaller parts that can be tested
+in isolation without being intertwined and dependent on other parts.
+
+My private projects are mostly written in a style that works well with
+extensive TDD-testing of especially the most critical systems. These are often
+parsers and pattern matching routines, where unit testing really shines at
+identifying incorrect behaviour and manual verification is time consuming and
+error-prone. The code base is written such that systems allow easy access
+and testing in isolation. The exact details depend on context, a pattern-matching
+routine can likely be written in a functional style; the test code need not
+handle any kind of setup or initialization routine to ensure that the test
+is done in a well-defined state. 
+
+% This project could be divided into a user-facing layer; the Java program
+% that we are developing.  connects to 
 
 % TODO: Dynamic Test Processes
 
 % TODO: Test Management Integration
 % TODO: Dynamic Test Processes
 %
-% TODO: sutable techniques for testing in the identified processes.
+% TODO: Suitable techniques for testing in the identified processes.
 
 
 
 \subsection{Reflections}\label{task-1c-reflect}
 % TODO: Reflection on creating a test plan in 100 words.
+
 

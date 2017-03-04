@@ -113,7 +113,7 @@ markdowntoprettypdf()
   # done
 
   # Then copy figures from another repo ..
-  ./copy-figures.sh
+  # ./copy-figures.sh
   
   # Find main tex file not specified as first argument to this script.
   if [ -z "$TEX_MAIN" ]

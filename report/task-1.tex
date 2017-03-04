@@ -46,7 +46,7 @@ from the course Wiki\cite{1dv600:lab3:instructions}:
 
 % * Find and use Test Plan template.
 % * Make use of the requirements (+additional material) from previous
-%   asignment.
+%   assignment.
 % * IMPORTANT: Quality requirements will require a special treatment.
 % * Identify objectives, objects
 %
@@ -60,15 +60,43 @@ from the course Wiki\cite{1dv600:lab3:instructions}:
 %
 % * Specify sutable techniques for testing in the identified processes.
 
+\subsubsection{Setting up the Test Tools}
+There is no doubt that the de-facto standard for testing Java codebases is
+JUnit\cite{tools:junit}, a testing library and framework that I have used
+extensively in the past.
+Most popular Java IDEs have some kind of support for integrating various
+third-party testing frameworks/tools. 
+This is often integrated test-runners and viewers for test results and other
+test output, which makes continous testing a lot easier to setup.
+
+It is important to be able to run the tests or suite of tests quickly --
+if test execution is slow and development must halt for some time; which could
+be a couple of seconds (smaller projects) or an entire night (Microsoft Windows).
+% TODO: Add citation for above
+
+Fast test suite execution encourages developers to run the test suite often,
+ideally directly after every single functional modification of the code.
+
+If the test suite is too slow, developers might put off running the tests.
+
+
+
+
+The project testing will be using JUnit for all test code. 
+
 
 \subsection{High-level Test System Planning}
-i
-% TODO: ("possibly" Static Test Processes "for objects and objectives")
+I usually configure my IDE, \texttt{Intellij IDEA Ultimate 2016.3.4}, to
+automatically run the tests or test suite when the source files are modified on
+disk. The test execution is almost instant for most trivial projects on my main
+desktop workstation.
+
+This project will use the same methodology, continous execution of fast tests.
+
 
 % TODO: Dynamic Test Processes
 
 % TODO: Test Management Integration
-% TODO: ("possibly" Static Test Processes "for objects and objectives")
 % TODO: Dynamic Test Processes
 %
 % TODO: sutable techniques for testing in the identified processes.

@@ -1,0 +1,115 @@
+% ______________________________________________________________________________
+%
+%   1DV600 - Software Technology
+%   Assignment 3 -- "Testing"
+%
+%  Author:  Jonas Sjöberg
+%           Linnaeus University
+%           js224eh@student.lnu.se
+%           https://github.com/jonasjberg
+%
+%    Date:  2017-03-03 -- 2017-03-05
+%
+% License:  Creative Commons Attribution 4.0 International (CC BY 4.0)
+%           <http://creativecommons.org/licenses/by/4.0/legalcode>
+%           See LICENSE.md for additional licensing information.
+% ______________________________________________________________________________
+
+
+% ______________________________________________________________________________
+\section{Task 2 -- Test Cases}
+
+\paragraph{Instructions}\label{task-1-instructions}
+from the course Wiki\cite{1dv600:lab3:instructions}:
+
+\begin{quote}
+    Take the two use cases that you identified in assignment 2 and create test
+    cases for them. Describe what it is you are going to test, how you are
+    going to do it and what outcome you expect from different tests. In
+    addition, write down your reflections with about 100 words.
+\end{quote}
+
+
+
+% ______________________________________________________________________________
+\subsection{Test Case for Use Case 1 -- Adding a Book}\label{task-2a}
+This use case was described in the previous assignment.
+
+\subsubsection{Use case 1 -- Scenario}\label{task-2a}
+The first use case is based on the following scenario:
+
+The user Gibson visits the book library application website to add a newly
+purchased book to his collection. Gibson first clicks the GUI button ``New
+Book'' which brings up another page with a number of empty metadata fields.
+Gibson then opens his physical book and fills out the fields to the best of his
+ability. He does this by manually clicking with the mouse in each text field,
+looks up the data in his book and fills out the textfield with the data.  After
+Gibson has filled out all the metadata fields, he clicks the ``Save'' button
+which brings him back to the page with the main view.
+The entered data is validated by the application. If the data is correct, it is
+handed over to the backend storage database.
+
+
+\subsubsection{Use case 1 -- Tests}
+For this test, the initial state of the book library must be known. We want
+to test adding a book, so we must know which books are already present.
+The books are identified with unique identifiers, book equality has been
+previously defined.
+The Book that is added during the test is created somehow, and this creation
+itself should also be tested. However, it is not obvious that testing this in
+the same code base or source file.
+After the Book has been added, we compare the initial known state to the
+expected final state; initial state with the additional added book.
+
+The tests will follow a common JUnit pattern that sets up initial conditions
+prior to each test, runs the test and then tears down the test environment.
+This is done for every test case so that the initial conditions can be
+controlled by the tester.
+
+An initial \texttt{setup}-routine will create the objects and define some
+known starting state. We will need a Book-object to add and a Library-object
+to add the book to.
+
+We then add enough test cases to confirm expected behaviour, which means test
+expected common behaviour and probably some unexpected ``edge-cases'' or error
+conditions. 
+
+An example test case could be:
+
+Adding book A to an empty library should result in a library containing the book A.
+
+Testing adding another book B in the same way would not improve test coverage
+as the programs would behave just the same.
+
+Another test case should be adding books to a library that already contains a
+book, adding a book to a library that already contains that book, and so on.
+
+
+% ______________________________________________________________________________
+\subsection{Test Case for Use Case 2 -- List Books}\label{task-2b}
+This use case was described in the previous assignment.
+
+\subsubsection{Use case 2 -- Scenario}
+The user Gibson visits the book library application website to view all books
+he has previously entered. The complete list of books appear at once as he
+visits the website. The listing is the default starting page and so Gibson does
+not have to interact with the application to view the listing.
+
+
+\subsubsection{Use case 2 -- Tests}
+This test could be implemented both at a lower level, testing the responses
+returned by the underlying database and the commands sent through the 
+web framework that eventually talks to the browser, that finally renders the
+actual graphics to be seen.
+
+The test could also be done at a higher level, as a kind of integration test,
+where we only care about testing the output that matters to the user, which is
+what actual graphics eventually gets rendered by the browser.
+
+For this project, I will only test communications between the different 
+components and classes in the Java code I've written myself.
+
+
+\subsection{Reflections}\label{task-2-reflect}
+
+

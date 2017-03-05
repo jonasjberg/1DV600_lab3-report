@@ -65,11 +65,11 @@ There is no doubt that the de-facto standard for testing Java codebass is
 JUnit\cite{tools:junit}, a testing library and framework that I have used
 extensively in the past.
 Most popular Java IDEs have some kind of support for integrating various
-third-party testing frameworks/tools. 
+third-party testing frameworks/tools.
 This is often integrated test-runners and viewers for test results and other
 test output, which makes continuous testing a lot easier to setup.
 
-The project testing will be using JUnit for all test code. 
+The project testing will be using JUnit for all test code.
 
 It is important to be able to run the tests or suite of tests quickly -- if
 test execution is slow and development must halt for some time; which could be
@@ -88,11 +88,14 @@ desktop workstation.
 
 This project will use the same methodology, continuous execution of fast tests.
 
-\subsection{Dynamic Test Processes}
-The codebase will be tested at a low-level. This requires that the code is
-written such that components can be used and tested in isolation.
-It is most helpful to divide the system into smaller parts that can be tested
-in isolation without being intertwined and dependent on other parts.
+\subsection{Overall Test Process}
+The codebase will be tested at a low-level with ``unit tests'' in dynamic test
+process.
+
+This requires that the code is written such that components can be used and
+tested in isolation.  It is most helpful to divide the system into smaller
+parts that can be tested in isolation without being intertwined and dependent
+on other parts.
 
 My private projects are mostly written in a style that works well with
 extensive test-driven development with unit testing of especially the most
@@ -102,13 +105,13 @@ verification is time consuming and error-prone. The code base is written such
 that systems allow easy access and testing in isolation. The exact details
 depend on context, a pattern-matching routine can likely be written in a
 functional style; the test code need not handle any kind of setup or
-initialization routine to ensure that the test is done in a well-defined state. 
+initialization routine to ensure that the test is done in a well-defined state.
 
 Some systems are inherently better suited for a object-oriented programming
 style.  This requires some extra work, the objects/classes/modules to be tested
 should be designed to allow for testing in isolation. Some components depend on
 some other system interface, this is often handled by substituting ``mock''
-objects in place of the dependencies. 
+objects in place of the dependencies.
 
 An example could be testing a component that requires a database connection.
 This could be done by presenting the object with an interface that matches that
@@ -117,35 +120,48 @@ has numerous advantages and eliminates variables that would otherwise introduce
 noise in the tests. This could be the `HTTP` connection in the database
 example.
 
-
-The main testing will be done at ``unit'' level, small fast tests with little
-to no dependencies.  Testing the complete system at ``system'' level should
-also be done to complement the unit-level testing. The tests cover different
-aspects of the application.
-
-
-% This project could be divided into a user-facing layer; the Java program
-% that we are developing.  connects to 
-
-% TODO: Finish Dynamic Test Processes!
+\begin{itemize}
+  \item The main testing will be done at ``unit'' level, small fast tests with
+        little to no dependencies.
+  \item The project will use the JUnit testing library and tools.
+  \item Testing the complete system at ``system'' level should also be done to
+        complement the unit-level testing -- the tests cover different aspects
+        of the application.
+\end{itemize}
 
 
 \subsection{Test Management Integration}
-The project testing will primarily use the JUnit integration features provided by the IDE.
-Additional software is needed for more sophisticated integration -- bug
-tracking, team collaboration tools, time management, etc.
+The project testing will primarily use the JUnit integration features provided
+by the IDE.  Additional software is needed for more sophisticated integration
+-- bug tracking, team collaboration tools, time management, etc.
 
-% TODO: Suitable techniques for testing in the identified processes.
+A popular choice is \texttt{Jira}\cite{tools:jira} by Atlassian.
+However, I would much prefer an open source tool like GitHub
+Issues\cite{tools:github-issues} or Launchpad \cite{tools:launchpad}.
+
+The supplied build system also hooks into the test runners to automate running
+the tests when rebuilding the application. However, the build scripts are not
+working properly on my system (\texttt{Linux 4.4.0-64-generic}) and so I am not
+at all confident that the continuous integration features of Gradle will work.
 
 
 \subsection{Quality Requirements}
 Quality requirements are known to be difficult to test properly.
 
-% For reviewing ..
-% TODO: ..
+The reliability of the application could be tested by monitoring server logs
+and generating statistics on the server uptime, connectivity and request
+response time. For smaller teams and projects, the reliability will likely
+be tested with some informal and manual approach. Maybe based on customer
+feedback and manual verification.
+
+Security testing is done by penetration testing the application and the entire
+technology stack used by the application.
+Professional ``pentesters'' perform auditing of systems, probing systems for
+weaknesses that could be exploited by a attacker, such as a malicious user,
+unintentional misuse, directed attacks etc.
 
 With well defined goals one could actually measure user interaction with the
-program by sending usage information from the users to a webserver, which can
+program by sending usage information from the users to a web server, which can
 generate all kind of composite data and statistics. This data can then be used
 to check whether requirements were met, with some predetermined limits for what
 constitutes a met requirement.
@@ -165,10 +181,6 @@ graphical environment in the operating system to mimic user behaviour, or by
 using a special web browser that can be programmatically controlled to interact
 with web pages in the same way a user would.
 
-
-A popular choice is \texttt{Jira}\cite{tools:jira} by Atlassian. However, I would much
-prefer an open source tool like GitHub Issues\cite{tools:github-issues} or
-Launchpad \cite{tools:launchpad}.
 
 
 \subsection{Reflections}\label{task-1c-reflect}

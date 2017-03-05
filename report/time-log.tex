@@ -26,36 +26,50 @@ in Table~\ref{table-timeplan}.
 
 \begin{itemize}
 \item
-  Task 1 -- Test Plan
-
+  \textbf{Task 1 -- Test Plan}
   \begin{itemize}
-  \item
-    \textbf{Subtask A -- Identify Objectives and Objects}\\
-    Time needed: 2 hours
-  \item
-    \textbf{Subtask B -- Create a Work Breakdown Structure}\\
-    Time needed: 4 hours
-  \item
-    \textbf{Subtask C -- Specify Testing Techniques}\\
-    Time needed: 2 hours
-  \item
-    \textbf{Subtask D -- Handle Quality Requirements}\\
-    Time needed: 4 hours
+  \item \textbf{Subtask A -- Identify Objectives and Objects}\\
+        Time needed: 2 hours
+  \item \textbf{Subtask B -- Create a Work Breakdown Structure}\\
+        Time needed: 3 hours
+  \item \textbf{Subtask C -- Specify Testing Techniques}\\
+        Time needed: 3 hours
+  \item \textbf{Subtask D -- Handle Quality Requirements}\\
+        Time needed: 2 hours
   \end{itemize}
+
 \item
-  \textbf{Task 2 -- Test Cases}\\
-  Time needed: 4 hours
+  \textbf{Task 2 -- Test Cases}
+  \begin{itemize}
+  \item \textbf{Subtask A -- Create Test Cases from Use Cases}\\
+        Time needed: 2 hours
+  \item \textbf{Subtask B -- Motivate Why and How to Test}\\
+        Time needed: 1 hours
+  \item \textbf{Subtask C -- Describe Expected Outcome}\\
+        Time needed: 1 hours
+  \end{itemize}
+
 \item
-  \textbf{Task 3 -- Unit Tests}\\
-  Time needed: 1 hours
+  \textbf{Task 3 -- Unit Tests}
+  \begin{itemize}
+  \item \textbf{Subtask A -- Create Unit Tests}\\
+        Time needed: 2 hours
+  \item \textbf{Subtask B -- Documentation}\\
+        Time needed: 4 hours
+  \end{itemize}
+
 \item
-  \textbf{Task 4 -- API Tests}\\
-  Time needed: 2 hours
+  \textbf{Task 4 -- API Tests}
+  \begin{itemize}
+  \item \textbf{Subtask A -- Create API Tests}\\
+        Time needed: 4 hours
+  \item \textbf{Subtask B -- Documentation}\\
+        Time needed: 4 hours
+  \end{itemize}
 \end{itemize}
 
 \subsubsection{Resulting Planning}\label{resulting-planning}
-% TODO: Planning ..
-Assume TODO effective hours of work per day.
+Assume 10 effective hours of work per day.
 
 \begin{longtable}[c]{@{}lll@{}}
 \toprule
@@ -71,52 +85,63 @@ Time (allocated/total)
 \midrule
 \endhead
 \begin{minipage}[t]{0.28\columnwidth}\raggedright\strut
-2017-02-16 Thursday
+2017-03-03 Friday
 \strut\end{minipage} &
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 Task 1, Subtask A
 
 Task 1, Subtask B
-\strut\end{minipage} &
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-4h
-
-2h / 4h
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.28\columnwidth}\raggedright\strut
-2017-02-17 Friday
-\strut\end{minipage} &
-\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
-Task 1, Subtask B
 
 Task 1, Subtask C
+
+Task 1, Subtask D
 \strut\end{minipage} &
 \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-2h / 4h
+2h
+
+3h
+
+3h
+
+2h
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.28\columnwidth}\raggedright\strut
+2017-03-03 Saturday
+\strut\end{minipage} &
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
+Task 2, Subtask A
+
+Task 2, Subtask B
+
+Task 2, Subtask C
+
+Task 3, Subtask A
+
+Task 3, Subtask B
+\strut\end{minipage} &
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+2h
+
+1h
+
+1h
+
+2h
 
 4h
 \strut\end{minipage}\tabularnewline
 \begin{minipage}[t]{0.28\columnwidth}\raggedright\strut
-2017-02-18 Saturday
+2017-03-04 Sunday
 \strut\end{minipage} &
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
-Task 2
+Task 4, Subtask A
 
-Task 3
+Task 4, Subtask B
 \strut\end{minipage} &
 \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 4h
 
-2h / 6h
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.28\columnwidth}\raggedright\strut
-2017-02-19 Sunday
-\strut\end{minipage} &
-\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
-Task 3
-\strut\end{minipage} &
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-4h / 6h
+4h
 \strut\end{minipage}\tabularnewline
 \bottomrule
   \caption{Time Plan for Assignment 2}
@@ -134,10 +159,9 @@ both the assignment report \latex sources and the program source code in
 \texttt{Git} repositories. The commit logs was extracted and processed with a
 simple \texttt{UNIX} pipeline to produce the time log table.
 
-This indicates that teh actual time spent on the project deviated heavily from
-the plan due to personal complications.
-As with the previous assignment, the majority of time was spent writing the
-report and producing artifacts related to the documentation.
+This indicates that the project would have needed a lot more time allocated to
+it in order to reach the goals within the submission deadline. 
+
 
 
 \begin{table}[]
@@ -147,65 +171,15 @@ report and producing artifacts related to the documentation.
 
     % TODO: Get data for THIS assignment. 
 
-    Date and time       & Activity      & Task performed                                     \\ \midrule
-    2017-02-04 17:57:39 & Development   & Add in progress first implementation.              \\
-    2017-02-04 18:14:22 & Development   & In progress update ..                              \\
-    2017-02-04 18:36:17 & Development   & Work in progress ..                                \\
-    2017-02-04 19:46:59 & Development   & Update ..                                          \\
-    2017-02-04 20:24:52 & Development   & Update .. Completes subtask 1B.                    \\
-    2017-02-04 20:47:33 & Development   & Start adding Javadoc ..                            \\
-    2017-02-05 00:56:33 & Development   & Fix up Javadoc.                                    \\
-    2017-02-05 01:15:28 & Development   & Various smaller fixes ..                           \\
-    2017-02-05 18:56:00 & Development   & Update ..                                          \\
-    2017-02-15 23:39:08 & Documentation & Initial commit.                                    \\
-    2017-02-15 23:39:15 & Documentation & Add in progress time log.                          \\
-    2017-02-15 23:50:58 & Documentation & Add first draft of the time log.                   \\
-    2017-02-16 00:13:32 & Documentation & Add time log planning table.                       \\
-    2017-02-16 00:13:53 & Documentation & Fix encoding errors in the instructions.           \\
-    2017-02-16 00:19:32 & Documentation & Fix time log table.                                \\
-    2017-02-16 00:20:31 & Documentation & Add 'time-log.md.pdf'.                             \\
-    2017-02-16 00:35:04 & Documentation & Add script 'markdowntoprettypdf.sh'.               \\
-    2017-02-16 18:05:52 & Development   & Add UML use case diagram skeleton.                 \\
-    2017-02-16 20:18:36 & Development   & Work in progress use case diagram ..               \\
-    2017-02-18 17:56:34 & Documentation & Add report skeleton.                               \\
-    2017-02-18 17:56:55 & Documentation & Add 'todo.md'.                                     \\
-    2017-02-18 18:01:15 & Documentation & Add 'make' build script.                           \\
-    2017-02-18 18:26:06 & Documentation & Add skeleton use case.                             \\
-    2017-02-18 18:28:40 & Documentation & First draft of 'intro.tex'.                        \\
-    2017-02-18 18:37:39 & Documentation & Finalize report skeleton.                          \\
-    2017-02-18 18:46:19 & Documentation & Update '{instructions,todo}.md' ..                 \\
-    2017-02-18 19:34:12 & Documentation & Add '.tex' use case skeleton and #1 in progress.   \\
-    2017-02-18 19:35:09 & Documentation & Remove '.tex' use cases. Use '.md' instead.        \\
-    2017-02-18 19:35:27 & Documentation & Add 'use-case-1.md'.                               \\
-    2017-02-18 19:35:38 & Documentation & Add handling 'use-case-*.md' to build script.      \\
-    2017-02-18 19:37:33 & Documentation & Modify front page title.                           \\
-    2017-02-18 19:39:23 & Documentation & Add skeleton time log from previous assignment.    \\
-    2017-02-18 19:39:43 & Documentation & Update task #1 ..                                  \\
-    2017-02-18 21:17:13 & Development   & Update UML use case diagram.                       \\
-    2017-02-19 15:56:28 & Development   & Add UML use case diagram #1.                       \\
-    2017-02-19 16:16:48 & Development   & Fix UML use case #1. Export .eps.                  \\
-    2017-02-19 16:32:04 & Development   & Update UML diagram for use case #1..               \\
-    2017-02-19 16:36:59 & Development   & Add UML diagram for use case #2 ..                 \\
-    2017-02-19 17:23:09 & Documentation & Add 'include' directory with '*.eps' figures.      \\
-    2017-02-19 17:23:31 & Documentation & Update ..                                          \\
-    2017-02-19 17:23:37 & Documentation & Update ..                                          \\
-    2017-02-19 17:27:36 & Documentation & Add 'copy-figures.sh' and use it in 'make' script. \\
-    2017-02-19 17:37:37 & Development   & Update UML diagram for use case #2.                \\
-    2017-02-19 17:38:27 & Development   & Add the lot in 'doc' ..                            \\
-    2017-02-19 17:44:04 & Documentation & Add sequence diagrams (not activity diagrams ..)   \\
-    2017-02-19 18:44:13 & Documentation & Finished Task 1.                                   \\
-    2017-02-19 18:54:39 & Development   & Update ..                                          \\
-    2017-02-19 19:09:00 & Documentation & Add use case specification for use case 2.         \\
-    2017-02-19 19:09:15 & Documentation & Adjust figures ..                                  \\
-    2017-02-19 19:17:35 & Development   & Add robustness diagram for use case #1.            \\
-    2017-02-19 19:27:34 & Development   & Add robustness diagram for use case #2.            \\
-    2017-02-19 19:31:51 & Development   & Update robustness diagram for use case #1.         \\
-    2017-02-19 19:39:18 & Documentation & Add robustness diagrams ..                         \\ \bottomrule
+    % Date and time       & Activity      & Task performed                                     \\ \midrule
+    % 2017-02-04 17:57:39 & Development   & Add in progress first implementation.              \\
+    % 2017-02-19 19:31:51 & Development   & Update robustness diagram for use case #1.         \\
+    % 2017-02-19 19:39:18 & Documentation & Add robustness diagrams ..                         \\ \bottomrule
     
     % TODO: Get data for THIS assignment. 
 
   \end{tabular}
-  \caption{Time Log for Assignment 2}
+  \caption{Time Log for Assignment 3}
   \label{table-timelog}
 \end{table}
 

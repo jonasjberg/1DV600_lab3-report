@@ -1,0 +1,58 @@
+% ______________________________________________________________________________
+%
+%   1DV600 - Software Technology
+%   Assignment 3 -- "Testing"
+%
+%  Author:  Jonas Sjöberg
+%           Linnaeus University
+%           js224eh@student.lnu.se
+%           https://github.com/jonasjberg
+%
+%    Date:  2017-03-03 -- 2017-03-05
+%
+% License:  Creative Commons Attribution 4.0 International (CC BY 4.0)
+%           <http://creativecommons.org/licenses/by/4.0/legalcode>
+%           See LICENSE.md for additional licensing information.
+% ______________________________________________________________________________
+
+
+% ______________________________________________________________________________
+\section{Task 4 -- API Tests}
+
+\paragraph{Instructions}\label{task-4-instructions}
+from the course Wiki\cite{1dv600:lab3:instructions}:
+
+\begin{quote}
+  Perform additional test on the API for the system by creating tests for all
+  the resources that are available in the API specification. You will find some
+  examples of how this is done in the file PingResourceTest . All tests will be
+  executed when you perform a vagrant reload and if a test fails, the building
+  will stop. Lastly, write down your reflections on testing APIs with about 100
+  words.
+\end{quote}
+
+
+
+% ______________________________________________________________________________
+\subsection{API Tests}\label{task-4}
+The API tests are included in the source code for this report.
+
+
+\subsection{Reflections}\label{task-4-reflect}
+Testing APIs is very important as this code is the ``glue'' and interface
+between our own codebase and third party services. If a third party changes
+their API, all users must be sure to update the code that depends on said API.
+
+Also, if the third party accidentally introduces unwanted behaviour or bugs
+into their code, we could detect it by checking the actual API responses
+against what we expect.
+
+It is probably worthwhile to design the application such that there is very
+clear separation between the code that communicates with API and the rest of
+the code, so that one could substitute a dummy API in place of the actual API
+without modifying anything. This would be an extra layer of abstraction,
+wrapping the API calls.
+
+This would also influence how the testing code can be written, making offline
+testing and mocking easier do.
+

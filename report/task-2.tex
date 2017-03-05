@@ -111,5 +111,22 @@ components and classes in the Java code I've written myself.
 
 
 \subsection{Reflections}\label{task-2-reflect}
+I have done a lot of TDD and unittesting in various previous projects.  Some
+tests can be very difficult to set up so that the test results actually reflect
+back on whether the code under test \emph{actually} performs as intended or
+not. It is difficult to have full test coverage\cite{wiki:code-coverage}, and
+even if you manage to acheive a very high coverage, there might be parts of the
+code that is simply impossible to test. This is very context-depdendent and
+vary with programming languages, executing platform, complications caused by
+multi-threading, parallellizing, etc. There could be some state of the program
+that would require testing the underlying interpreter or virtual machine. Even
+if the entire project is built on open source code, some complex states are
+often still practically unreachable due to budget constraints.
+
+I usually apply testing to where it makes sense and the time required to
+implement the testing is justifiable. I have tried all-out TDD, striving for
+100\% coverage, and I have concluded that a lot of code makes little sense to
+test, while other parts really demands extensive testing if the project is to
+be taken at all seriously.
 
 

@@ -88,24 +88,21 @@ desktop workstation.
 
 This project will use the same methodology, continuous execution of fast tests.
 
-% TODO: Finish Dynamic Test Processes!
-
-\subsection{High-level Test System Planning}
-\subsubsection{Dynamic Test Processes}
+\subsection{Dynamic Test Processes}
 The codebase will be tested at a low-level. This requires that the code is
 written such that components can be used and tested in isolation.
 It is most helpful to divide the system into smaller parts that can be tested
 in isolation without being intertwined and dependent on other parts.
 
 My private projects are mostly written in a style that works well with
-extensive TDD-testing of especially the most critical systems. These are often
-parsers and pattern matching routines, where unit testing really shines at
-identifying incorrect behaviour and manual verification is time consuming and
-error-prone. The code base is written such that systems allow easy access
-and testing in isolation. The exact details depend on context, a pattern-matching
-routine can likely be written in a functional style; the test code need not
-handle any kind of setup or initialization routine to ensure that the test
-is done in a well-defined state. 
+extensive test-driven development with unit testing of especially the most
+critical systems. These are often parsers and pattern matching routines, where
+unit testing really shines at identifying incorrect behaviour and manual
+verification is time consuming and error-prone. The code base is written such
+that systems allow easy access and testing in isolation. The exact details
+depend on context, a pattern-matching routine can likely be written in a
+functional style; the test code need not handle any kind of setup or
+initialization routine to ensure that the test is done in a well-defined state. 
 
 Some systems are inherently better suited for a object-oriented programming
 style.  This requires some extra work, the objects/classes/modules to be tested
@@ -120,29 +117,62 @@ has numerous advantages and eliminates variables that would otherwise introduce
 noise in the tests. This could be the `HTTP` connection in the database
 example.
 
-We just want to test the functionality of our code.
+
+The main testing will be done at ``unit'' level, small fast tests with little
+to no dependencies.  Testing the complete system at ``system'' level should
+also be done to complement the unit-level testing. The tests cover different
+aspects of the application.
+
 
 % This project could be divided into a user-facing layer; the Java program
 % that we are developing.  connects to 
 
-\subsubsection{Test Management Integration}
+% TODO: Finish Dynamic Test Processes!
+
+
+\subsection{Test Management Integration}
 The project testing will primarily use the JUnit integration features provided by the IDE.
 Additional software is needed for more sophisticated integration -- bug
 tracking, team collaboration tools, time management, etc.
+
+% TODO: Suitable techniques for testing in the identified processes.
+
+
+\subsection{Quality Requirements}
+Quality requirements are known to be difficult to test properly.
+
+% For reviewing ..
+% TODO: ..
+
+With well defined goals one could actually measure user interaction with the
+program by sending usage information from the users to a webserver, which can
+generate all kind of composite data and statistics. This data can then be used
+to check whether requirements were met, with some predetermined limits for what
+constitutes a met requirement.
+
+One example could be that the requirements specify that the average user should
+have to spend at most $n$ seconds to find to the ``Add Book'' button, from some
+specific initial condition or state.
+Then, using the harvested user data, the requirement can easily be verified.
+
+However, taking typing speed, unreliable connection and a other factors into
+account makes quantifying the user experience in this way very complicated very
+quickly.
+
+
+System testing is pretty easy to to do, either be scripting the entire
+graphical environment in the operating system to mimic user behaviour, or by
+using a special web browser that can be programmatically controlled to interact
+with web pages in the same way a user would.
+
 
 A popular choice is \texttt{Jira}\cite{tools:jira} by Atlassian. However, I would much
 prefer an open source tool like GitHub Issues\cite{tools:github-issues} or
 Launchpad \cite{tools:launchpad}.
 
-\subsubsection{Dynamic Test Processes}
-% TODO: Dynamic Test Processes
-
-\subsubsection{Test Management Integration}
-% TODO: Suitable techniques for testing in the identified processes.
 
 \subsection{Reflections}\label{task-1c-reflect}
 % TODO: Reflection on creating a test plan in 100 words.
 
 
-\subsubsection{Quality Requirements}
 
